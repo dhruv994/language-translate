@@ -1,6 +1,18 @@
+import './index.css'
 import BookList from "./components/BookList";
 import BookCreate from "./components/BookCreate";
+import { useState } from 'react'
+export default function App() {
+    const [books, setBooks] = useState([]);
 
-export default function App(){
-    return<h1> THis is my app component</h1>
+    const handleAddBooks = (book) => {
+        console.log("book is being added=>",book);
+    }
+
+    return (
+        <div>
+            <BookCreate addBook={handleAddBooks} />
+            <BookList />
+        </div>
+    )
 }
