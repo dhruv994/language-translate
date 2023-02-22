@@ -5,14 +5,22 @@ import { useState } from 'react'
 export default function App() {
     const [books, setBooks] = useState([]);
 
-    const handleAddBooks = (book) => {
-        console.log("book is being added=>",book);
+    const handleAddBooks = (title) => {
+        const updateBooks = [
+            ...books,
+            {
+                id: Math.round(Math.random()*999),
+                title
+            }
+        ];
+        setBooks(updateBooks);
     }
 
     return (
         <div>
+            {books.length}
             <BookCreate addBook={handleAddBooks} />
-            <BookList />
+            <BookList books={books}/>
         </div>
     )
 }
