@@ -1,7 +1,7 @@
 import BookShow from "./BookShow";
 
 export default function BookList({ books }) {
-    const sendBooks = () => {
+    const renderbooks = () => {
         const multibook = books && books.map((book) => {
             return <BookShow key={book.id} book={book} />
         });
@@ -10,7 +10,7 @@ export default function BookList({ books }) {
     }
     return (
         <div>
-            {sendBooks()}
+            {renderbooks}
         </div>
     )
 

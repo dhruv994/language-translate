@@ -17,10 +17,9 @@ export default function App() {
     }
 
     return (
-        <div>
-            {books.length}
-            <BookCreate addBook={handleAddBooks} />
+        <div className='app'>
             <BookList books={books}/>
+            <BookCreate addBook={handleAddBooks} />
         </div>
     )
 }
