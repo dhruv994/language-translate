@@ -10,7 +10,11 @@ export default function BookShow({ book, onDelete, onEdit }) {
     const handleEdit = () => {
         setShowEdit(!showEdit)
     }
-    let content = showEdit ? <BookEdit book={book} onEdit={onEdit} /> : <h3>{book.title}</h3>
+    const handleSubmit = (book) => {
+        onEdit(book);
+        setShowEdit(false);
+    }
+    let content = showEdit ? <BookEdit book={book} onSubmit={handleSubmit} /> : <h3>{book.title}</h3>
 
     return (
         <div className="book-show">
