@@ -22,10 +22,23 @@ export default function App() {
         setBooks(filteredBook);
 
     }
+
+    const handleBookEditById = (toEditBook) => {
+        console.log("book to edit title for", toEditBook);
+        const updatedBookTile = books.map((book) => {
+            if (book.id === toEditBook.id) {
+                return { ...book, title: toEditBook.title }
+            }
+            return book;
+
+        });
+        console.log("updated array", updatedBookTile)
+        setBooks(updatedBookTile)
+    }
     return (
         <div className='app'>
             {books.length}
-            <BookList books={books} onDelete={handleBookDeleteById} />
+            <BookList books={books} onDelete={handleBookDeleteById} onEdit={handleBookEditById} />
             <BookCreate addBook={handleAddBooks} />
         </div>
     )
