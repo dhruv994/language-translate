@@ -9,16 +9,23 @@ export default function App() {
         const updateBooks = [
             ...books,
             {
-                id: Math.round(Math.random()*999),
+                id: Math.round(Math.random() * 999),
                 title
             }
         ];
         setBooks(updateBooks);
     }
+    const handleBookDeleteById = (id) => {
+        const filteredBook = books.filter((book) => {
+            return book.id !== id;
+        })
+        setBooks(filteredBook);
 
+    }
     return (
         <div className='app'>
-            <BookList books={books}/>
+            {books.length}
+            <BookList books={books} onDelete={handleBookDeleteById} />
             <BookCreate addBook={handleAddBooks} />
         </div>
     )
