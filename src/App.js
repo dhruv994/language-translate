@@ -29,7 +29,9 @@ export default function App() {
         ];
         setBooks(updateBooks);
     }
-    const handleBookDeleteById = (id) => {
+    const handleBookDeleteById = async(id) => {
+
+        const result = await axios.delete('http://localhost:3001/books/'+id);
         const filteredBook = books.filter((book) => {
             return book.id !== id;
         })
@@ -43,7 +45,7 @@ export default function App() {
         console.log("RESULT>DATA",result.data);
         const updatedBookTile = books.map((book) => {
             if (book.id === result.data.id) {
-                return { ...book, ...response.data }
+                return { ...book, ...result.data }
             }
             return book;
 
