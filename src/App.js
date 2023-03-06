@@ -1,11 +1,21 @@
 import './index.css'
 import BookList from "./components/BookList";
 import BookCreate from "./components/BookCreate";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 export default function App() {
     const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        console.log('hi');
+        fetchBooks();
+    },[])
+
+    const fetchBooks = async () => {
+        const result = await axios.get('http://localhost:3001/books');
+        setBooks(result.data);
+    }
 
     const handleAddBooks = async (title) => {
 
@@ -27,17 +37,19 @@ export default function App() {
 
     }
 
-    const handleBookEditById = (toEditBook) => {
+    const handleBookEditById = async(toEditBook) => {
         console.log("book to edit title for", toEditBook);
+        const result = await axios.put('http://localhost:3001/books/'+toEditBook.id,{title:toEditBook.title});
+        console.log("RESULT>DATA",result.data);
         const updatedBookTile = books.map((book) => {
-            if (book.id === toEditBook.id) {
-                return { ...book, title: toEditBook.title }
+            if (book.id === result.data.id) {
+                return { ...book, ...response.data }
             }
             return book;
 
         });
-        console.log("updated array", updatedBookTile)
-        setBooks(updatedBookTile)
+         console.log("updated array", updatedBookTile)
+         setBooks(updatedBookTile)
     }
     return (
         <div className='app'>
