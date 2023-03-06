@@ -37,7 +37,7 @@ export default function App() {
     }
     return (
         <div className='app'>
-            {books.length}
+            <h1>Reading List</h1>
             <BookList books={books} onDelete={handleBookDeleteById} onEdit={handleBookEditById} />
             <BookCreate addBook={handleAddBooks} />
         </div>
