@@ -51,7 +51,7 @@ function Provider({ children }) {
         books,
         handleBookEditById,
         handleAddBooks,
-        handleBookDeleteById
+        handleBookDeleteById,fetchBooks
 
     }
     return (
