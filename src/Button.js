@@ -1,9 +1,5 @@
 import className from 'classnames';
 
-const finalClassName = className({
-
-})
-
 export default function Button({ children,
     primary,
     secondary,
@@ -21,10 +17,10 @@ export default function Button({ children,
         'rounded-full': rounded,
         'bg-white': outline,
         'text-blue-500': outline && primary,
-        'text-gray-900': outline && secondary,
-        'text-green-500': outline && success,
-        'text-red-500': outline && danger,
-        'text-yellow-400': outline && warning,
+        'text-gray-800': outline && secondary,
+        'text-green-600': outline && success,
+        'text-red-600': outline && danger,
+        'text-yellow-500': outline && warning,
 
 
 
