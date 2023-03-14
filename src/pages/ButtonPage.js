@@ -1,9 +1,9 @@
 import React from 'react';
-import Button from './components/Button';
+import Button from '../components/Button';
 
 import { GoBell } from 'react-icons/go'
 
-export default function App() {
+export default function ButtonPage() {
     return (<>
         <h1> Hello World</h1>
         <div><Button success rounded outline>Click Here </Button></div>
