@@ -1,17 +1,27 @@
 import React from 'react';
-import Button from './components/Button';
-
-import { GoBell } from 'react-icons/go'
+import Accordion from './components/Accordion';
 
 export default function App() {
+
+    const items = [
+        {
+            id: 'ws23d',
+            label: 'how are you ?',
+            content: 'lourem ispum sd;jsdkjsdlkjsdkjsdkjsd'
+        },
+        {
+            id: 'ws23def',
+            label: 'how are you ?',
+            content: 'lourem ispum sd;jsdkjsdlkjsdkjsdkjsd'
+        },
+        {
+            id: 'ws23dgh',
+            label: 'how are you ?',
+            content: 'lourem ispum sd;jsdkjsdlkjsdkjsdkjsd'
+        }
+    ]
     return (<>
-        <h1> Hello World</h1>
-        <div><Button success rounded outline>Click Here </Button></div>
-        <div><Button warning>Buy Now </Button></div>
-        <div><Button danger>See Deals </Button></div>
-        <div><Button secondary outline rounded> <GoBell /> Turn Back </Button></div>
-        <div><Button primary >Turn Ahead </Button></div>
-        <div><Button warning >Turn Around </Button></div>
+        <Accordion items={items} />
     </>
     )
 }
