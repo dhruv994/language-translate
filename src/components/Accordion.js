@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { GoChevronDown, GoChevronLeft } from 'react-icons/go';
 
-export default function Accordion({ items }) {
+export default function Accordion({items}) {
+ 
     const [expendedIndex, setExpendedIndex] = useState(0);
    const  handleClick = (nextIndex) => {
         if (nextIndex === expendedIndex)
