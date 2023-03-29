@@ -9,16 +9,22 @@ export function NavigationProvider({ children }) {
 
     useEffect(() => {
         const handler = () => {
-
+            setCurrentPath(window.location.pathname);
         }
         window.addEventListener('popstate', handler);
 
         return () => {
             window.removeEventListener('popstate', handler)
         }
-    });
+    }, []);
 
-    return (<NavigationContext.Provider value={{}}>
+
+    const navigate = (to) => {
+        console.log("IN NAVIGATE METHOD", to);
+        window.history.pushState({}, "", to);
+        setCurrentPath(to);
+    }
+    return (<NavigationContext.Provider value={{ currentPath, navigate }}>
         {currentPath}
         {children}
     </NavigationContext.Provider>)
