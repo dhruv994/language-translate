@@ -1,21 +1,25 @@
 import React from 'react';
-import Link from './components/Link';
+import Sidebar from './components/Sidebar';
 import Routes from './components/Routes';
 import AccordianPage from './pages/AccordianPage';
 import DropdownPage from './pages/DropdownPage';
-
+import ButtonPage from './pages/ButtonPage';
 export default function App() {
 
     return (<>
-        <Link to="/accordian">Go to accordian</Link>
-        <Link to="/dropdown">Go to dropdown</Link>
-        <div>
-            <Routes path='/accordian'>
-                <AccordianPage></AccordianPage>
-            </Routes>
-            <Routes path='/dropdown'>
-                <DropdownPage></DropdownPage>
-            </Routes>
+        <div className='container mx-auto grid grid-cols-6 gap-4 mt-4'>
+            <Sidebar></Sidebar>
+            <div className='col-span-5'>
+                <Routes path='/accordian'>
+                    <AccordianPage></AccordianPage>
+                </Routes>
+                <Routes path='/'>
+                    <DropdownPage></DropdownPage>
+                </Routes>
+                <Routes path='/button'>
+                    <ButtonPage />
+                </Routes>
+            </div>
         </div>
 
     </>)
