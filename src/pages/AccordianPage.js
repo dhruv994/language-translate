@@ -13,7 +13,7 @@ export default function AccordianPage() {
             label: 'how are you ?',
             content: 'lourem ispum sd;jsdkjsdlkjsdkjsdkjsd'
         },
-        {id: 'ws23d',
+        {id: 'ws23d1',
             label: 'how are you ?',
             content: 'lourem ispum sd;jsdkjsdlkjsdkjsdkjsd'
         }

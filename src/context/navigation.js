@@ -20,12 +20,10 @@ export function NavigationProvider({ children }) {
 
 
     const navigate = (to) => {
-        console.log("IN NAVIGATE METHOD", to);
         window.history.pushState({}, "", to);
         setCurrentPath(to);
     }
     return (<NavigationContext.Provider value={{ currentPath, navigate }}>
-        {currentPath}
         {children}
     </NavigationContext.Provider>)
 
