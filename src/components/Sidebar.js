@@ -7,7 +7,8 @@ export default function Sidebar() {
         { label: 'Accordian', path: '/accordian' },
         { label: 'Buttons', path: '/button' },
         { label: 'Modal', path: '/modal' },
-        { label: 'Table', path: '/table' }
+        { label: 'Table', path: '/table' },
+        { label: 'Counter', path: '/counter' }
 
     ];
 
