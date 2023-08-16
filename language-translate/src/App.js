@@ -1,32 +1,15 @@
-import './App.css'
-import { useState } from "react";
-import AnimalShow from "./AnimalsShow";
+import CarList from './components/CarList';
+import CarForm from './components/CarForm';
+import CarSearch from './components/CarSearch';
+import CarValue from './components/CarValue';
 
-function getRandomAnimals() {
-    const animals = ['cow', 'bird', 'gator', 'dog', 'horse', 'cat']
-    return animals[Math.floor(Math.random() * animals.length)]
-}
 
 export default function App() {
+    return (<div className='container is-fluid'>
+        <CarForm />
+        <CarSearch />
+        <CarList />
+        <CarValue />
 
-    const [animals, setAnimal] = useState([]);
-
-    const handleCLick = () => {
-        setAnimal([...animals, getRandomAnimals()]);
-    }
-
-    const renderAnimals =  animals.map((animal, index) => {
-        return    <AnimalShow type={animal} key={index} />
-        });
-
-
-    return (
-        <div className='app'>
-            <button onClick={handleCLick}> Add Animal</button>
-
-            <div className='animal-list'>
-                {renderAnimals}
-            </div>
-        </div>
-    )
+    </div>)
 }
