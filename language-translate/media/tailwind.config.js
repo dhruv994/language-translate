@@ -4,7 +4,16 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        shimmer: {
+          '100%': {tramsform: 'translateX(100%)'}
+        }
+      },
+      animation: { 
+        shimmer: 'shimmer 1.5s infinite'
+      }
+    },
   },
   plugins: [],
 }
